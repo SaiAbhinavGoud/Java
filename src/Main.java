@@ -1,13 +1,14 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import  java.sql.*;
+void main() throws  Exception{
+        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
-    }
+    // to see how IntelliJ IDEA suggests fixing it.
+    String url = "jdbc:postgresql://localhost:5432/mark1";
+    String user  = "postgres";
+    String pass = "12345";
+//    Class.forName("org.postgresql.Driver");
+    Connection con = DriverManager.getConnection(url,user,pass);
+    System.out.println("Con Working");
 }
